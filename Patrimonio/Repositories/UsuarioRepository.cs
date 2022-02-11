@@ -28,13 +28,15 @@ namespace Patrimonio.Repositories
                 if (Criptografia.ValidarCriptografia(usuario.Senha) == true)
                 {
                     bool confere = Criptografia.Comparar(senha, usuario.Senha);
-                    if (confere) return usuario;
+                    if (confere) 
+                        return usuario;
                 }
                 else
                 {
                     CriptografarSenha(usuario);
                     bool confere = Criptografia.Comparar(senha, usuario.Senha);
-                    if (confere) return usuario;
+                    if (confere) 
+                        return usuario;
                 }
             }
 

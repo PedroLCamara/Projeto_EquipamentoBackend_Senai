@@ -14,12 +14,13 @@ namespace Patrimonio.Utils
 
         public static bool Comparar(string SenhaForm, string SenhaBanco)
         {
-            return BCrypt.Net.BCrypt.Verify(SenhaForm, SenhaBanco);
+            bool A = BCrypt.Net.BCrypt.Verify(SenhaForm, SenhaBanco);
+            return A;
         }
 
         public static bool ValidarCriptografia(string SenhaBanco)
         {
-            if (SenhaBanco.Length == 32 && SenhaBanco.Substring(0, 1) == "$")
+            if (SenhaBanco.Length >= 32 && SenhaBanco.Substring(0, 1) == "$")
             {
                 return true;
             }
