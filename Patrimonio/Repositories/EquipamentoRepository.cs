@@ -46,7 +46,7 @@ namespace Patrimonio.Repositories
 
         Equipamento IEquipamentoRepository.BuscarPorID(int id)
         {
-            return ctx.Equipamentos.Find(id);
+            return ctx.Equipamentos.FirstOrDefault(e => e.Id == id);
         }
     }
 }
